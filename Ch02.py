@@ -20,14 +20,15 @@ import datetime
 #                               - Example output: 2020-10-05 17:57:57.510261 Network Active to 8.8.8.8
 
 #Function
-#Single ICMP Packet to Specific IP Address every two second w/ response true=up or false=down
+#Single ICMP Packet to Specific IP Address every two second w/ response true=Up or false=Down
 def Single_ICMP():
     icmp_packet = '8.8.8.8'
     while True:
         timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        status = 'Up' if ping3.ping(icmp_packet) else 'Down'
+        response_status = 'Up' if ping3.ping(icmp_packet) else 'Down'
 
-        print(f'[{timestamp}] Destination: {icmp_packet} | Status: {status}')
+        # Print variable, timpestamp and destination ip tested
+        print(f'[{timestamp}] Destination: {icmp_packet} | Status: {response_status}')
         time.sleep(2)
 
 if __name__ == '__main__':
