@@ -80,26 +80,26 @@ def main():
 
 # Display a menu
     print("Select a mode:")
-    print("1. Encrypt a file")
-    print("2. Decrypt a file")
-    print("3. Encrypt a message")
-    print("4. Decrypt a message")
+    print("1 - Encrypt file")
+    print("2 - Decrypt file")
+    print("3 - Encrypt message")
+    print("4 - Decrypt message")
 # User inserts mode
-    mode = int(input("Enter the mode number: "))
+    mode = int(input("Enter mode number: "))
     # Mode Selection/Call function 
     if mode == 1:
-        encrypt_file(key, input("Enter the filepath of the file to encrypt: "), input("Enter the filepath to save the encrypted file: "))
+        encrypt_file(key, input("Enter filepath of the file to encrypt: "), input("Enter filepath to save the encrypted file: "))
         print("File encrypted successfully.")
 
     elif mode == 2:
-        decrypt_file(key, input("Enter the filepath of the file to decrypt: "), input("Enter the filepath to save the decrypted file: "))
+        decrypt_file(key, input("Enter filepath of the file to decrypt: "), input("Enter filepath to save the decrypted file: "))
         print("File decrypted successfully.")
 
     elif mode == 3:
-        encrypt_message(key, input("Enter the cleartext message to encrypt: "))
+        encrypt_message(key, input("Enter cyphertext message to encrypt: "))
 
     elif mode == 4:
-        decrypt_message(key, input("Enter the ciphertext message to decrypt: "))
+        decrypt_message(key, input("Enter ciphertext message to decrypt: "))
 # If user enters something else display error message
     else:
         print("Invalid mode selection.")
