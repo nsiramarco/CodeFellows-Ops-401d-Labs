@@ -12,6 +12,7 @@ from cryptography.fernet import Fernet
 #                               Recursively decrypt a single folder that was encrypted by this tool.
 
 # Function
+# Developed with class review assistance
 # Key generation
 def generate_key():
     return Fernet.generate_key()
