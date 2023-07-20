@@ -54,8 +54,9 @@ def encrypt_message(key, message):
 def decrypt_message(key, encrypted_message):
     fernet = Fernet(key)
     decrypted_message = fernet.decrypt(encrypted_message.encode())
-    #pring decrypted message as a string
+    #print decrypted message as a string
     print("Decrypted message:", decrypted_message.decode())
+
 
 # Recursive folder and contents and key to encrypt
 def encrypt_folder(key, input_folder, output_folder):
@@ -125,7 +126,7 @@ def main():
     else:
         print("Invalid mode selection. Please try again..")
 
-# Execute script main
+# Execute script main/menu selection
 if __name__ == "__main__":
     main()
 
