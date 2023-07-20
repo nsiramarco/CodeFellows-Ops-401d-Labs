@@ -98,7 +98,6 @@ def desktop_wallpaper(image_ransome, message_ransome):
 
 
 
-# Menu prompt, add this as a ransomware simulation option.
 
 # Main
 # Check if encryption key exists
