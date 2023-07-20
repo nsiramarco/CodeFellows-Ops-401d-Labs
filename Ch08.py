@@ -88,7 +88,7 @@ def decrypt_folder(key, input_folder, output_folder):
 def desktop_wallpaper(image_ransome, message_ransome):
     imageUrl = 'https://images.idgesg.net/images/article/2018/02/ransomware_hacking_thinkstock_903183876-100749983-large.jpg'
     # Download image and save it to the desktop folder
-    path = '/home/ns/CodeFellows-Ops-401d-Labs-2' 
+    path = '/home/ns/CodeFellows-Ops-401d-Labs-2/image-background.jpg' 
     urllib.request.urlretrieve(image_ransome, path)
     # Change the desktop wallpaper using Windows API
     SPI_SETDESKWALLPAPER = 20
@@ -96,10 +96,9 @@ def desktop_wallpaper(image_ransome, message_ransome):
 # popup window with ransomware message
     messagebox.showinfo("This is the ransomeware pop-up window, /n In order to decrypt follow the instruction... (pending) ", message_ransome)
 
+
+
 # Menu prompt, add this as a ransomware simulation option.
-
-
-
 
 # Main
 # Check if encryption key exists
@@ -120,6 +119,7 @@ def main():
     print("4 - Decrypt message")
     print("5 - Recursively encrypt folder and its contents")
     print("6 - Recursively decrypt folder that was encrypted by this tool")
+    print("7 - Desktop wallpaper with ransomware message")
 
     mode = int(input("Enter mode: "))
 
@@ -148,6 +148,10 @@ def main():
         output_folder = input("Enter folder path to save decrypted files: ")
         decrypt_folder(key, input_folder, output_folder)
         print("Folder decrypted successfully.")
+
+    elif mode == 7:
+        desktop_wallpaper()
+        print("Ransomware desktop wallpaper set and default pop-up message displayed successfully.")
 
     else:
         print("Invalid mode selection. Please try again..")
