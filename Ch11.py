@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import os
+from scapy.all import srl, IP, ICMP, TCP # scapy library
+
 
 # Script Name:                  Network Security Tool with Scapy Part 1 of 3
 # Author:                       NATASHA SIRAMARCO
@@ -15,7 +17,37 @@ import os
 #                               If no flag is received, notify the user the port is filtered and silently dropped.
 
 
+# Function
+# Assited with class video
+# Define Host
+host = "scanme.nmap.org"
+#Port Range
+port_range = 22
+port_scan = 22
+port_dest = 22
 
+# Ping Ports
+ping = srl(IP(dst = host)/ICMP())
+if ping:
+    ping.show()
+
+# TCP packet
+
+response = srl(IP(dst = host)/TCP(sport = port_scan, dport = port_dest, flags = "S"), timeout = 1, verbose = 0)
+
+if (response.haslayer(TCP)):
+        if (response.getlayer(TCP).flags == 0x12):
+              # Send RST packet
+              send_rst = srl(IP(dst = host)/TCP(sport = port_scan, dport = port_dest, flags = "R"), timeout = 1, verbose = 0)
+              print (f"{host}:{port_dest} is open.")
+        elif (response.getlayer(TCP).flags == 0x14):
+              # Notify its closed
+              print (f"{host}:{port_dest} is closed.")
+        elif (response.getlayer(TCP).flags == 0x14):  # need to fix
+              # Notify No FLag
+              print (f"{host}:{port_dest} port is filtered and silently dropped")
+else:
+      print("Host in unresponsive.")
 # Main
 
 # End
