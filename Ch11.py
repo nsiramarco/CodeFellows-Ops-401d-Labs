@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os
-from scapy.all import srl, IP, ICMP, TCP # scapy library
+from scapy.all import srl, IP, ICMP, TCP    # Scapy library
 
 
 # Script Name:                  Network Security Tool with Scapy Part 1 of 3
@@ -35,6 +35,7 @@ if ping:
 
 response = srl(IP(dst = host)/TCP(sport = port_scan, dport = port_dest, flags = "S"), timeout = 1, verbose = 0)
 
+
 if (response.haslayer(TCP)):
         if (response.getlayer(TCP).flags == 0x12):
               # Send RST packet
@@ -43,12 +44,12 @@ if (response.haslayer(TCP)):
         elif (response.getlayer(TCP).flags == 0x14):
               # Notify its closed
               print (f"{host}:{port_dest} is closed.")
-        elif (response.getlayer(TCP).flags == 0x14):  # need to fix
-              # Notify No FLag
-              print (f"{host}:{port_dest} port is filtered and silently dropped")
+        elif (response.getlayer(TCP).flags == None):
+            # Notify it's closed (filtered and silently dropped)
+            print(f"{host}:{port_dest} is filtered and silently dropped")
+
 else:
       print("Host in unresponsive.")
-# Main
 
 # End
 
