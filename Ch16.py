@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import os
+import getpass 
+import sys
 import time
 
 # Script Name:                  Automated Brute Force Wordlist Attack Tool Part 1 of 3
@@ -45,34 +46,39 @@ def iterator():
 
 # Second Mode: Defensive; Password Recognized
 def password_recognized():
-    # User input string
-    usr_string = input("Enter string to search: ")
+    # User Password
+    user_password = getpass("Enter password:")
     # User input word list file path
     filepath = input("Enter filepath for wordlist: ")
 
     # Open wordlist
     with open(filepath, 'r') as file:
         # Read all lines & remove trailing spaces
-        word_list = [line.strip() for line in file.readlines()]
+        word_list = [line.strip() for line in file]
 
     # Check if the input string is in the word list
-    if usr_string in word_list:
-        print("The string appeared in the word list.")
+    if user_password in word_list:
+        print("The password appeared in the wordlist.")
     else:
-        print("The string did not appear in the word list.")
+        print("The password did not appear in the wordlist.")
 
 # Main
 # Mode menu
-mode = input("Select a mode: \n1: Offensive; Dictionary Iterator. \n2: Defensive; Password Recognized. ")
+mode = input("""Select a mode: 
+             1: Offensive; Dictionary Iterator. 
+             2: Defensive; Password Recognized.
+             3: Exit 
+             """)
 
 # Run the corresponding mode
-if mode == '1':
+if (mode == '1'):
     iterator()
-elif mode == '2':
+elif (mode == '2'):
     password_recognized()
+elif (mode == '3'):
+    sys.exit()
 else:
-    print("Invalid mode selection, Please choose 1 or 2. ")
-    
+    print("Invalid mode selection, Please choose 1, 2 or 3. ")
 
 # END
 # Assited with class video and chatGPT reviewed for errors
