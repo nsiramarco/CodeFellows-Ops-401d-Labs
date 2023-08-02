@@ -7,7 +7,6 @@ from scapy.all import srl, IP, ICMP, TCP    # Scapy library
 # Author:                       NATASHA SIRAMARCO
 # Date of latest revision:      07/25/2023
 # Purpose:                      In Python, create a TCP Port Range Scanner that tests whether a TCP port is open or closed. The script must:
-#                               
 #                               Utilize the scapy library
 #                               Define host IP
 #                               Define port range or specific set of ports to scan
