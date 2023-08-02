@@ -7,7 +7,6 @@ from cryptography.fernet import Fernet
 # Author:                       NATASHA SIRAMARCO
 # Date of latest revision:      07/19/2023
 # Purpose:                      Add a feature capability to your script to:
-#                               
 #                               Recursively encrypt a single folder and all its contents.
 #                               Recursively decrypt a single folder that was encrypted by this tool.
 
