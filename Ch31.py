@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import os
+import subprocess
 
 
 # Script Name:                  Signature-based Malware Detection Part 1 of 3
