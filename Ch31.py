@@ -19,7 +19,7 @@ import subprocess
 #                               
 
 
-
+# Function
 def search_files(directory, filename):
     hits = []
     for root, dirs, files in os.walk(directory):
@@ -27,6 +27,7 @@ def search_files(directory, filename):
             hits.append(os.path.join(root, filename))
     return hits
 
+# Main
 def main():
     # User input file name to search for
     filename = input("Enter the file name to search for: ")
