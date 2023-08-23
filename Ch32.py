@@ -54,7 +54,7 @@ def main():
         # Search each file in the directory by name.
         hits = search_files(directory, filename)
         if hits:
-            # For each result found print to the screen the file name, location, MD5 hash, file size, and timestamp.
+            # Print file name, location, MD5 hash, file size, and timestamp.
             print("\nFiles found:")
             for hit in hits:
                 file_path, md5_hash, file_size = hit
