@@ -42,7 +42,7 @@ print(cookie)
 # - Send the cookie back to the site and receive a HTTP response
 def site_cookie(cookie):
     # Send cookie back to the site
-    response = requests.get(targetsite, cookies=cookie)
+    response = requests.get(targetsite, cookies = cookie)
     return response.content
 
 
@@ -67,4 +67,4 @@ firefox_webpage("response.html")
 
 
 # Stretch Goal
-# - Give Cookie Monster hands
+# - Give Cookie Monster hands - I gave him a cookie instead
