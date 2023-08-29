@@ -55,7 +55,7 @@ def html_file(content):
 
 # - Open it with Firefox
 def firefox_webpage(html_file):
-    firefox_path = "path_to_firefox_executable"  # Replace with the actual path to your Firefox executable
+    firefox_path = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Firefox"
     webbrowser.register('firefox', None, webbrowser.BackgroundBrowser(firefox_path))
     webbrowser.get("firefox").open(html_file)
 
