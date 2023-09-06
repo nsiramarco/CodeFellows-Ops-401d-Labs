@@ -1,22 +1,3 @@
-Nmap Automation Tool
---------------------
-IP address to scan: 10.0.2.9
-The IP you entered is:  10.0.2.9
-
-Select scan to execute:
-                1) SYN ACK Scan
-                2) UDP Scan
-                3) IP Protocol Scan             
-3
-You have selected option:  3
-Enter a port range: 0-255
-Nmap Version: (7, 93)
-{'ip': {'method': 'ipproto', 'services': '0-255'}}
-IP Status: up
-['ip']
-                                                                             
-┌──(kali㉿kali)-[/usr/share/nmap]
-└─$ cat ch42.py         
 #!/usr/bin/python3
 
 import nmap
@@ -33,7 +14,7 @@ type(ip_addr)
 resp = input("""\nSelect scan to execute:
                 1) SYN ACK Scan
                 2) UDP Scan
-                3) IP Protocol Scan             \n""")
+                3) IP Protocol Scan: Range 0-255            \n""")
 print("You have selected option: ", resp)
 
 range = '1-50'
