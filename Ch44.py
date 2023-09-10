@@ -4,7 +4,7 @@ import socket
 import time
 
 sockmod = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-timeout = time.sleep(15)
+timeout = time.sleep(10)
 sockmod.settimeout(timeout)
 
 hostip = input("Enter Host Ip Address: ")
