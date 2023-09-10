@@ -1,21 +1,22 @@
 #!/usr/bin/python3
 
 import socket
+import time
 
 sockmod = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-timeout = # TODO: Set a timeout value here.
+timeout = time.sleep(15)
 sockmod.settimeout(timeout)
 
-hostip = # TODO: Collect a host IP from the user.
-portno = # TODO: Collect a port number from the user, then convert it to an integer data type.
+hostip = input("Enter Host Ip Address: ")
+portno = int(input("Enter Port Number: "))
 
 def portScanner(portno):
-    if sockmod.FUNCTION((hostip, portno)): # TODO: Replace "FUNCTION" with the appropriate socket.function call as found in the [socket docs](https://docs.python.org/3/library/socket.html)
+    if sockmod.connect((hostip, portno)):
         print("Port closed")
     else:
         print("Port open")
 
-portScanner(port)
+portScanner(portno)
 
 
 # Resources
